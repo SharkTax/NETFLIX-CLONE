@@ -1,0 +1,316 @@
+@import url('https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,700;1,300&family=Poppins:ital,wght@0,100;0,400;1,100&display=swap');
+
+
+:root{
+  --whiteRed:#DAF7A6;
+  --yellow:#FFC300;
+  --orange:#FF5733;
+  --red:#C70039;
+  --redawine:#900C3F;
+  --wine:#581845;
+  
+}
+
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+    font-size: 15pt;
+    background: var(--wine);
+    font-family:'Lato', 'Poppins','Times New Roman', Times, serif;
+}
+
+/*=======BARRA DE NAVEGAÇÃO=============*/
+.container-nav{
+  position: sticky;
+  top: 0;
+  display: flex;
+  width: 100%;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 10px 0 10px;
+  background-color: var(--redawine);
+  z-index: 10;
+}
+
+.logo{
+  font-family:"Lato", 'Times New Roman', Times, serif;
+  color: var(--orange);
+  letter-spacing: 3px;
+  font-size: 30px;
+}
+.nav-bar{
+  display: flex;
+  gap: 30px;
+}
+.container-nav .nav-bar a{
+  text-decoration: none;
+  color: var(--yellow);
+  font-family:'Poppins';
+  transition: .5s;
+}
+.container-nav .nav-bar a:hover{
+  color: var(--red);
+}
+
+/*=============SEÇÃO DO FIME PRINCIPAL=====*/
+
+main{
+  position: relative;
+  margin: 10px;
+}
+.main-movie{
+  display: flex;
+    flex-direction: column;
+    
+    justify-content: center;
+    align-items: center;
+    
+    position: relative;
+    margin-top: 10px;
+}
+
+.main-movie img{
+  border-radius: 20px;
+ 
+  width: 99%;
+  height: 100%;
+
+}
+.main-movie .container{
+  position: absolute;
+  padding-left: 20px;
+  border-radius: 20px;
+   background: linear-gradient(rgba(0,0,0, .3),rgba(0,0,0, .7));
+  
+  display: flex;
+    flex-direction: column;
+    
+    justify-content: center;
+    align-items: start;
+    
+    
+  min-width: 99%;
+  height: 100%;
+}
+
+.container h3{
+  font-size: 50px;
+  font-family: 'Poppins','Times New Roman', Times, serif;
+  animation: mainMovie 2s;
+  transition: 5s;
+  margin-bottom: 30px;
+}
+.container p{
+  font-family: 'Poppins', 'Times New Roman', Times, serif;
+  animation: mainMovie 5s;
+  transition: 5s;
+  width:700px;
+
+}
+
+.buttons-main{
+  margin: 20px 0 0 0;
+  animation: mainMovie 5s;
+  transition: 5s;
+}
+
+.container .button-MM{
+  padding: 20px 40px;
+  background: transparent;
+  border: 2px solid white;
+  color: white;
+
+}
+
+.container .button-MM:hover{
+  background: rgba(225, 225 , 225, .6);
+  color: black;
+}
+
+/*animaçao do main*/
+@keyframes mainMovie{
+  from{
+    transform: translateY(70%);
+    display: hidden;
+  }
+  to{
+    transform: translateY(0);
+    
+  }
+}
+
+
+main .container{
+  color: white;
+}
+
+/*caroussel*/
+
+.caroussel-movies{
+  background: var(--redawine);
+  width: 100%;
+  height: 350px;
+  display: flex;
+  justify-content: start;
+  align-items: center;
+  gap: 20px;
+  overflow-x: scroll;
+  overflow-y: hidden;
+  scroll-snap-type: x mandatory;
+  -webkit-overflow-scrolling: touch;
+}
+
+.box{
+  min-width: 260px;
+  min-height: 95%;
+  background: var(--wine);
+  box-shadow: 2px 10px 12px rgba(0,0,0, .5);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  box-sizing: border-box;
+  position: relative;
+  border-radius: 20px;
+  scroll-snap-align: start;
+  overflow: hidden;
+}
+
+.model{
+  position: absolute;
+  min-height: 98%;
+  width: 260px;
+  max-height: 100%;
+  max-width: 100%;
+  border-radius:20px;
+}
+.details{
+  left: 0;
+  right: 0;
+  bottom: 0;
+  position: absolute;
+  padding: 1rem;
+  background: white;
+  max-height: 98%;
+  transform: translateY(100%);
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  border-radius: 20px;
+  transition: .5s;
+  overflow-y: scroll;
+  
+}
+.details h3{
+  letter-spacing: 3px;
+  font-family: 'Poppins', Arial, Helvetica, sans-serif;
+  padding-bottom: 10px; 
+  font-size: 25px;
+}
+.details p{
+  font-family: 'Lato', Arial, Helvetica, sans-serif;
+  font-size: 20px;
+}
+.box:hover .details{
+  transform: translateY(0)
+}
+
+/*===========hero section==============*/
+
+
+.movies-cataloge{
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+}
+
+#form{
+  width: 100%;
+  display: flex;
+  justify-content: end;
+  padding: 20px;
+  background: var(--redawine)
+}
+
+.search{
+  min-width: 300px;
+  max-width: 400px;
+  padding: 15px;
+  border:2px solid var(--wine) ;
+  border-radius: 20px;
+  background: var(--redawine);
+  color:var(--wine);
+  box-shadow: 2px 10px 12px rgba(0,0,0, .5);
+  
+}
+.hero-container{
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  position: relative;
+  align-items: center;
+  justify-content: center;
+  margin: 10px 0 0 0; 
+  
+}
+
+.box-hero{
+  max-width: 30%;
+  max-height: 600px;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  overflow: hidden;
+  
+}
+
+.box-hero img{
+  width: 100%;
+  height: 100%;
+}
+.movie-info{
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+}
+.basics-informations{
+  display: absolute;
+  display: flex;
+  padding: 6px;
+  max-height: 60px;
+  min-height: 40px;
+  justify-content: space-between;
+  align-items: center;
+  background: rgba(0,0,0, .7);
+  color: #fff;
+  font-size: 15px;
+  font-family: 'Lato', Arial, Helvetica, sans-serif;
+}
+.overview {
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+  bottom: 0;
+  right: 0;
+  left: 0;
+  background: rgba(225, 225 , 225, .5);
+  padding:1rem;
+  transition: .6s;
+  transform: translateY(100%);
+  align-items: center;
+  overflow-y:scroll;
+}
+
+.box-hero:hover .overview{
+  transform: translateY(0)
+}
